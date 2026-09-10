@@ -22,7 +22,14 @@ function calculatePay() {
   }
 
   // 3. Calculation & Display on success
-  let pay = hours * rate;
+  let pay = 0;
+
+  // Calculate overtime if hours exceed 40
+  if (hours > 40) {
+    pay = (40 * rate) + ((hours - 40) * (rate * 1.5));
+  } else {
+    pay = hours * rate;
+  }
 
   resultDiv.style.color = "black";
   resultDiv.innerText = name + "'s total pay is: $" + pay.toFixed(2);
