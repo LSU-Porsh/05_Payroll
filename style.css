@@ -1,66 +1,143 @@
-/* style.css */
-
-body {
-  font-family: Arial, sans-serif; /*[cite: 1] */
+/* 1. Global Reset & Base Styles */
+* {
+  box-sizing: border-box;
   margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-color: #f4f7f6;
+  padding: 0;
 }
 
-form {
-  display: flex; /*[cite: 1] */
-  flex-direction: column; /*[cite: 1] */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+}
+
+/* 2. Header & Navigation */
+header {
   width: 100%;
-  max-width: 300px; /*[cite: 1] */
-  background-color: white;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 420px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+h1 {
+  font-size: 1.5rem;
+  color: #0f172a;
+  font-weight: 700;
+  padding: 50px;
+}
+
+nav a {
+  color: #1e40af;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: #1e3a8a;
+  text-decoration: underline;
+}
+
+/* 3. Main Container */
+main {
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  margin-bottom: 16px;
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+/* 4. Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 420px;
+  background-color: #ffffff;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+  border: 1px solid #e2e8f0;
 }
 
 label {
-  margin-top: 10px; /*[cite: 1] */
-  margin-bottom: 5px;
-  font-weight: bold;
-  color: #333;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #334155;
+  text-align: left;
+}
+
+label:first-of-type {
+  margin-top: 0;
 }
 
 input {
-  padding: 10px;
-  margin-bottom: 20px; /* Adds spacing between inputs */
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1rem;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: #0f172a;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
+/* Focus state for accessibility */
+input:focus {
+  border-color: #1e40af;
+  box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.15);
+}
+
+/* 5. Button Styling */
 button {
-  margin-top: 15px; /*[cite: 1] */
-  padding: 10px; /* Slightly increased from 8px for better clickability */
-  background-color: darkblue; /*[cite: 1] */
-  color: white; /*[cite: 1] */
-  border: none; /*[cite: 1] */
-  border-radius: 4px;
-  cursor: pointer; /*[cite: 1] */
-  font-size: 1rem;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
+  margin-top: 12px;
+  padding: 12px;
+  background-color: #1e40af;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
 button:hover {
-  background-color: #000055; /* Hover effect */
+  background-color: #1e3a8a;
 }
 
-/* Visually distinct result section */
-.result {
-  margin-top: 25px;
-  padding: 15px;
-  background-color: #e8f4f8;
-  border-left: 5px solid darkblue;
-  border-radius: 4px;
-  color: #000055;
+button:active {
+  transform: scale(0.98);
+}
+
+/* 6. Dynamic Result Box */
+#result, .result {
+  width: 100%;
+  max-width: 420px;
+  margin-top: 20px;
+  padding: 14px 16px;
+  background-color: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-left: 4px solid #1e40af;
+  border-radius: 6px;
+  color: #1e3a8a;
   text-align: center;
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* Hide empty result box until populated by JS */
+#result:empty {
+  display: none;
 }
