@@ -131,7 +131,13 @@ Users should receive an appropriate message when invalid information is entered.
 
 ## Contributors
 
-* **Justin Troy M. Estrevillo** – Documentation and README Manager
+## Contributors
+
+1. **Chris Laurence Cagoco** – 
+2. **Gian Paolo Abuton** 
+3. **Khen Bevir Bongosia** 
+4. **Ludwig Polecios** 
+5. **Justin Troy M. Estrevillo** 
 
 ## Contribution Workflow
 
